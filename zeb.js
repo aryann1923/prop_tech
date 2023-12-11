@@ -1,16 +1,6 @@
-import {
-  View,
-  Text,
-  ImageBackground,
-  Image,
-  TextInput,
-  TouchableOpacity,
-  FlatList,
-} from 'react-native';
+import {View, Text, ImageBackground, Image, FlatList} from 'react-native';
 
-import {useState, useEffect} from 'react';
-import Feather from 'react-native-vector-icons/Feather';
-import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
+import {useState} from 'react';
 
 import SearchBar from '../components/searchBar';
 import BottomBar from '../components/bottomTab';
@@ -25,7 +15,6 @@ function Zhome() {
     {id: 6},
   ]);
 
-  const [search, set_search] = useState(false);
   const [scrollDirection, setScrollDirection] = useState('up');
   const [offset, setOffset] = useState(0);
 
@@ -101,10 +90,9 @@ function Zhome() {
                     }}>
                     <Text style={{color: 'white'}}>All : All</Text>
 
-                    <FontAwesomeIcon
-                      name="caret-down"
-                      size={20}
-                      color={'white'}
+                    <Image
+                      source={require('../assets/caret.png')}
+                      style={{height: 19, width: 19}}
                     />
                   </View>
                 </View>
@@ -320,3 +308,4 @@ function Zhome() {
   );
 }
 export default Zhome;
+
